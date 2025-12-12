@@ -1,0 +1,396 @@
+body {
+  background-color: rgb(207, 207, 207);
+}
+
+#Board {
+  display: flex;
+  height: auto;
+  width: 95%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 10% 50px 50px 50px;
+}
+
+@font-face {
+  font-family: "Digital-7";
+  src: url("digital-7.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bomb-image {
+  width: 25px;
+  height: auto;
+  margin: 6.5px 0px 0px 0px;
+}
+
+.flag-sprite {
+  width: 45px;
+  height: auto;
+  margin: -3px 0px 0px -7px;
+  transition: filter 10s ease-in;
+}
+
+#result {
+  position: absolute;
+  display: none;
+  padding: 10px;
+  top: 20rem;
+  flex-direction: row;
+  justify-content: center;
+  width: 300px;
+  margin-left: 41%;
+  margin-right: 50%;
+  border: 10px #ffffff solid;
+  border-bottom: #5c5c5c 10px solid;
+  border-right: #5c5c5c 10px solid;
+  background-color: rgb(196, 196, 196);
+  box-shadow: 10px 10px 30px rgb(44, 44, 44);
+}
+
+.game-over {
+  font-family: "Silkscreen", sans-serif;
+  font-size: xx-large;
+  height: auto;
+  width: 250px;
+  text-shadow: 1px 1px gray;
+  letter-spacing: 2px;
+}
+
+#rstr-container {
+  margin-left: -10px;
+  position: absolute;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 200px;
+  top: 21.5rem;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 10px rgb(255, 255, 255) solid;
+  border-bottom: rgb(99, 99, 99) 10px solid;
+  border-right: rgb(99, 99, 99) 10px solid;
+  background-color: #ababab;
+  box-shadow: 10px 10px 15px #2c2c2c;
+}
+
+#restart {
+  width: 70px;
+  height: 70px;
+  font-size: x-large;
+  cursor: pointer;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+}
+
+#restart:hover {
+  background-color: #5a5a5a;
+  border: 5px #b8b8b8ad solid;
+  border-bottom: #474747ad 5px solid;
+  border-right: #474747ad 5px solid;
+}
+
+.restart-image {
+  width: 70px;
+  margin: -7px 0px 0px -12px;
+  background-image: url("restart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 0 10px black;
+}
+
+.tip-container {
+  height: 500px;
+  width: 85px;
+  display: flex;
+  justify-content: center;
+}
+
+#tip {
+  font-family: "Silkscreen", sans-serif;
+  margin-top: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: x-large;
+  cursor: pointer;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  background-image: url("Light_Bulb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: black;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
+    2px 2px 0 white;
+  box-shadow: 0 0 10px black;
+}
+
+#tip:hover {
+  background-color: #5a5a5a;
+  border: 5px #b8b8b8ad solid;
+  border-bottom: #474747ad 5px solid;
+  border-right: #474747ad 5px solid;
+}
+
+#FLAGS {
+  font-family: "Digital-7", sans-serif;
+}
+
+#container-left {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container-left {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  border: 5px rgb(139, 139, 139) solid;
+  height: 55px;
+  width: 100px;
+  position: absolute;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  border-bottom: rgb(99, 99, 99) 5px solid;
+  border-right: rgb(99, 99, 99) 5px solid;
+  box-shadow: 0 0 10px black;
+}
+
+.counter {
+  padding: 5px;
+  font-family: "Digital-7", sans-serif;
+  font-size: 45px;
+  font-weight: bolder;
+  color: white;
+}
+
+.GameModes {
+  display: flex;
+  height: 200px;
+  width: 100px;
+  flex-direction: column;
+  margin: 25px;
+  margin-top: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  border: 10px rgb(255, 255, 255) solid;
+  border-bottom: rgb(99, 99, 99) 10px solid;
+  border-right: rgb(99, 99, 99) 10px solid;
+  background-color: #ababab;
+  box-shadow: 10px 10px 15px #2c2c2c;
+}
+
+#mode1 {
+  margin-bottom: 5px;
+  width: 70px;
+  height: 80px;
+  cursor: pointer;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Silkscreen", sans-serif;
+  box-shadow: 0 0 10px black;
+}
+
+#mode1:hover {
+  background-color: #5a5a5a;
+  border: 5px #b8b8b8ad solid;
+  border-bottom: #474747ad 5px solid;
+  border-right: #474747ad 5px solid;
+}
+
+#mode2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 70px;
+  height: 80px;
+  cursor: pointer;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Silkscreen", sans-serif;
+  box-shadow: 0 0 10px black;
+}
+
+#mode2:hover {
+  background-color: #5a5a5a;
+  border: 5px #b8b8b8ad solid;
+  border-bottom: #474747ad 5px solid;
+  border-right: #474747ad 5px solid;
+}
+
+#mode3 {
+  margin-top: 5px;
+  width: 70px;
+  height: 80px;
+  cursor: pointer;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Silkscreen", sans-serif;
+  box-shadow: 0 0 10px black;
+}
+
+#mode3:hover {
+  background-color: #5a5a5a;
+  border: 5px #b8b8b8ad solid;
+  border-bottom: #474747ad 5px solid;
+  border-right: #474747ad 5px solid;
+}
+
+#container-timer {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 40px;
+  border: 5px rgb(139, 139, 139) solid;
+  height: 55px;
+  width: 100px;
+  background-color: black;
+  border-bottom: rgb(99, 99, 99) 5px solid;
+  border-right: rgb(99, 99, 99) 5px solid;
+  box-shadow: 0 0 10px black;
+}
+
+#timer {
+  padding: 5px;
+  font-family: "Digital-7", sans-serif;
+  color: white;
+  font-size: 45px;
+  font-weight: bolder;
+  align-items: center;
+}
+
+.grid {
+  align-items: center;
+  font-family: "Silkscreen", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #b5b4b0;
+  border: 10px solid rgb(99, 99, 99);
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 15px rgb(44, 44, 44);
+  position: relative;
+}
+
+.number-1 {
+  color: rgb(3, 3, 244);
+}
+.number-2 {
+  color: rgb(220, 9, 9);
+}
+.number-3 {
+  color: rgba(11, 148, 16, 0.993);
+}
+.number-4 {
+  color: rgb(113, 2, 113);
+}
+.number-5 {
+  color: rgb(34, 241, 248);
+}
+.number-6 {
+  color: rgb(204, 106, 123);
+}
+.number-7 {
+  color: rgb(32, 32, 32);
+}
+.number-8 {
+  color: rgb(78, 51, 3);
+}
+
+div {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+.invert {
+  filter: invert(1);
+  transition: filter 0.1s ease-in-out;
+}
+
+.valid {
+  width: 40px;
+  height: 40px;
+  font-family: "Silkscreen", sans-serif;
+  font-size: 30px;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  box-sizing: border-box;
+}
+
+.bomb {
+  width: 40px;
+  height: 40px;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid #808080;
+  background-color: #ababab;
+  box-sizing: border-box;
+  /* background-color: red; */
+}
+
+.checked {
+  width: 40px;
+  height: 40px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+
+#theme {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border-radius: 25px;
+  right: 50px;
+  bottom: 50px;
+}

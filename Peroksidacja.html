@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="sitestyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://esraa-alaarag.github.io/Minesweeper/images/bomb.png" />
+    <title>Minesweeper</title>
+  </head>
+  <body>
+
+    <div id="Board">
+
+<div id="container-right"> 
+      <div id="container-timer"> 
+        <span id="timer">0</span>
+
+        <div id="rstr-container">
+          <button id="restart">
+            <img src="restart.png" alt="Restart" class="restart-image">
+          </button>
+
+          <button id="tip"></button>
+
+        </div>
+      </div>
+    </div>
+
+      <div class="grid"></div>
+
+      <div id="container-left">
+        <div class="counter-container">
+
+          <div class="counter">
+              <span id="FLAGS"></span>
+          </div>
+
+        </div>
+
+          <div class="GameModes">
+            <button id="mode1">10</button>
+            <button id="mode2">60</button>
+            <button id="mode3">120</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="result">
+      </div>
+    </div>
+    <button id="theme">a</button>
+
+    <script src="jssaper.js"></script>
+  </body>
+</html>

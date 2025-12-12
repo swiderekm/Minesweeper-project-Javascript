@@ -1,0 +1,125 @@
+/* body {
+  background-color: black;
+}
+
+.seamine-sprite {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url("mine.png");
+  background-size: cover;
+  animation: float-up 10s infinite linear;
+  left: clamp(0, calc(50% - 75px), calc(100% - 75px));
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes float-up {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100vh;
+  }
+} */
+
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  /* filter: blur(2px); */
+  /* filter: brightness(20%); */
+}
+.grid-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  filter: brightness(20%);
+}
+.grid-item {
+  border: 10px rgb(255, 255, 255) solid;
+  border-bottom: rgb(99, 99, 99) 10px solid;
+  border-right: rgb(99, 99, 99) 10px solid;
+  background-color: #ababab;
+  box-sizing: border-box;
+}
+
+.btn-container {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  height: 150px;
+  width: 350px;
+  position: absolute;
+  z-index: 10;
+  border: 20px rgb(255, 255, 255) solid;
+  border-bottom: rgb(99, 99, 99) 20px solid;
+  border-right: rgb(99, 99, 99) 20px solid;
+  background-color: #ababab;
+  font-weight: bolder;
+  font-size: 100px;
+  src: url("Jersey10.ttf") format("truetype");
+  cursor: pointer;
+  color: black;
+  text-shadow: -2px -2px 15px white, 2px -2px 0 white, -2px 2px 0 white,
+    2px 2px 0 white;
+}
+
+.btn:hover {
+  background-color: #5a5a5a;
+  border: 20px #b8b8b8ad solid;
+  border-bottom: #474747ad 20px solid;
+  border-right: #474747ad 20px solid;
+}
+
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  background-color: #58585888;
+  height: 180px;
+  width: 100%;
+  top: 0%;
+  text-align: center;
+}
+
+#header {
+  margin-bottom: 30px;
+  font-size: 200px;
+  font-family: "Silkscreen", sans-serif;
+  color: black;
+  text-shadow: -2px -2px 15px white, 2px -2px 0 white, -2px 2px 0 white,
+    2px 2px 0 white;
+}
+
+.footer-container {
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0%;
+}
+
+#footer {
+  height: 100px;
+  width: 200vh;
+  background-color: #1a1a1a;
+}
