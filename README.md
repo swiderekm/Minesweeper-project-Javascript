@@ -5,3 +5,5 @@ Game was created without my previous bigger knowledge on javascript, though I st
 The project was really fun and most important of all it works.
 
 Today my javascript and overall programming knowledge has skyrocketed.
+
+Link to the game: https://swiderekm.github.io/Minesweeper-project-Javascript/
