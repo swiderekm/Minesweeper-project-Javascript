@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isGameOver || square.classList.contains("checked")) return;
     if (!square.classList.contains("flag") && flagsCount > 0) {
       square.classList.add("flag");
-      square.innerHTML = `<img src="flag.png" alt="flag_sprite" class="flag-sprite">`;
+      square.innerHTML = '🚩' //`<img src="flag.png" alt="flag_sprite" class="flag-sprite">`;
       flagsCount--;
       flagsLeft.innerHTML = flagsCount;
     } else if (square.classList.contains("flag")) {
